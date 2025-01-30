@@ -1,16 +1,26 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "dialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , validator(1,9999)
+
 {
     ui->setupUi(this);
-    ui->PortText->setValidator(&validator);
+
  }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_DialogButton_clicked()
+{
+
+    Dialog dialogWindow;
+    dialogWindow.setModal(true);
+    dialogWindow.exec();
+}
+

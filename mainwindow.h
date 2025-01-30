@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QIntValidator>
+
 
 
 QT_BEGIN_NAMESPACE
@@ -19,9 +19,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_DialogButton_clicked();
+
 private:
     Ui::MainWindow *ui;
-    QIntValidator validator;
+
 };
 
 
